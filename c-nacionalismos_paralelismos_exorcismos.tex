@@ -1,0 +1,65 @@
+\chapter{Nacionalismos, paralelismos, exorcismos}
+\begin {quotation}
+\begin {flushright}
+\begin {minipage}{6cm}
+\emph{El orgullo más barato es el orgullo nacional, que delata en quien lo siente la ausencia de cualidades individuales.}
+\begin {flushright}
+\textsc{J. W. von GÖTHE}
+\end{flushright}
+\end {minipage}
+\end {flushright}
+\end {quotation}
+\section{«¡Hay que defender lo nuestro!»}
+«Lo nuestro» es una escala pentatónica, otras escalas modales, flautas de pan, e intervalos paralelos. ¿De dónde es quien se atreve a afirmar esto? ¿De Salta? ¿De Hungría? ¿De China? Podría ser de prácticamente cualquier lugar del mundo. Sólo aquellas personas que aún no han podido ver que todo pueblo humano hace flautas con la tibia de la pierna de su enemigo y que esa flauta-hueso nunca tendrá (salvo tecnología mecánica que lo permita) más agujeros que los que con las manos humanas pueden taparse estarían dispuestas aún a debatir sobre la pertenencia de los bienes culturales llamados folclóricos.
+
+El siguiente es un apartado inicialmente técnico que nos asistirá en la tarea de develar cómo funcionan en las músicas folclóricas dos conceptos complementarios enseñados ya hace tiempo por Nietzsche: \emph{lo dionisíaco y lo apolíneo.}
+\section{Terceras o sextas paralelas tonales y politonales o lo apolíneo y lo dionisíaco en las músicas folclóricas}
+Como una de las tantas configuraciones en común de las músicas folclóricas del mundo encontramos a las terceras o sextas paralelas como cotidiana práctica. En el ámbito tonal tal práctica deriva en una variedad de terceras o sextas menores y mayores, lo que otorga un interés a través del tiempo. Una práctica politonal basada en el paralelismo de estos intervalos deriva en una igualdad de terceras o sextas: todas menores o todas mayores, lo cual cancela el interés en el tiempo, pero esa carencia pasa a ser compensada por el interés espacial de la superposición de dos centros tonales. Ejemplificamos:
+
+%[line-width=16\cm,ragged-right,staffsize=16,noindent,quote]
+\begin{lilypond}
+#(define ((tiempo-compuesto numuno numdos denuno dendos) grob)
+  (grob-interpret-markup grob
+    (markup #:override '(baseline-skip . 0) #:number
+      (#:line (
+          (#:column (numuno denuno))
+          (#:column (numdos dendos))
+          )))))
+
+\relative c'{
+  \tempo "Ahora que estás ausente"
+  \override Staff.TimeSignature #'stencil = #(tiempo-compuesto "6" "3" "8" "4")
+  \time 6/8
+  \partial 8 <b g'>8
+  <g' e'>8. <g e'>8 <f d'>16 <g e'>4 <e c'>8
+  <f d'>8. <f d'>8 <g e'>16 <a f'>8. <g e'>8 <f d'>16
+  <e c'>8[ <d b'>] <c a'>4 <b g'> \partial 1*5/8 <g e'>4. r4 \bar "|."
+}
+\end{lilypond}
+
+\noindent contiene sextas tanto mayores como menores, mientras que
+
+%[line-width=16\cm,noindent,ragged-right,staffsize=16,quote]
+\begin {lilypond}
+#(define ((tiempo-compuesto numuno numdos denuno dendos) grob)
+        (grob-interpret-markup grob
+          (markup #:override '(baseline-skip . 0) #:number
+            (#:line (
+                      (#:column (numuno denuno))
+                      (#:column (numdos dendos))
+)))))
+
+\relative c'{
+  \tempo "Ahora que estamos ausentes"
+  \override Staff.TimeSignature #'stencil = #(tiempo-compuesto "6" "3" "8" "4")
+  \time 6/8
+  \partial 8 <b g'>8_"Mi Mayor"^"Do Mayor"
+  <gis' e'>8. <gis e'>8 <fis d'>16 <gis e'>4 <e c'>8
+  <fis d'>8. <fis d'>8 <gis e'>16 <a f'!>8. <gis e'>8 <fis! d'>16
+  <e c'>8[ <dis b'>] <cis a'>4 <b g'!> \partial 1*5/8 <gis e'>4. r4 \bar "|."}
+\end{lilypond}
+
+\noindent es una situación musical de igualdad en cuanto las sextas que se usan (todas menores) pero los centros tonales simultáneos de Do y Mi hacen al interés armónico de este fragmento.
+
+\section{Un caso de posesión}
+En los dos casos expuestos arriba hay una perfecta carencia de independencia rítmica de las dos voces participantes. Son intervalos de sexta, pero no son dos voces. El «unísono» rítmico las iguala como el alcohol, el fútbol y la muerte igualan a los seres humanos. Lo dionisíaco se hace evidente, no hay una medida individuación de las voces. No hay polifonía. Lo apolíneo parece haber desaparecido, pero reaparece en el primer caso (las sextas tonales) cuando entra en la escena musical la politonalidad. El individual, medido y único centro tonal de la antes dionisíaca zamba \emph{ahora está ausente} porque también está presente otro centro tonal que hace parecer a este dúo más a Legión que a Jesús. ¡Jesús! «Ahora que estamos ausentes» hace apolínea a «Ahora que estás ausente». ¿Podemos esperar a «Ahora que estás exorcizada»? La domesticación de la máquina de guerra no se hace esperar mucho, y entonces, una vez más, tendremos la posibilidad de volver a gritar «¡Hay que defender lo nuestro!», romperle las piernas al simpatizante del equipo rival (necesitamos dos dionisíacas flautas), tocar «Ahora que estamos ausentes», brindar, y entonces, habiéndoles dejado un ordenado mundo a nuestros hijos, morir en paz.

@@ -1,0 +1,51 @@
+\documentclass[a4paper,11pt]{scrbook}
+\usepackage{polyglossia}
+\setdefaultlanguage{spanish}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\usepackage[tmargin=1cm,
+            bmargin=1cm,
+            lmargin=2cm,
+            rmargin=2cm,
+            margin=3cm,
+            a4paper,
+            ]{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[hidelinks,
+            ]{hyperref}
+\usepackage{makeidx}
+\makeindex
+%\usepackage{fontspec}
+%\usepackage{lilyglyphs}
+\usepackage {harmony}
+\usepackage[hpadding=0]{lyluatex}
+\lysetoption{inline-staffsize}{20}
+
+\setcounter {secnumdepth} {-1}
+%\renewcommand{\baselinestretch}{1.5}
+
+\title{Lectura y Escritura Musical}
+\author{Pablo Herrera}
+\date{\today}
+
+\begin{document}
+\renewcommand\figurename{Ejemplo}
+\renewcommand\thefigure{\arabic{figure}}
+\maketitle
+\frontmatter
+\tableofcontents
+\mainmatter
+\input{c-pocos}
+\input{c-respiracion}
+\input{c-generos}
+\input{c-tango-cumbia}
+\input{c-nacionalismos_paralelismos_exorcismos}
+\input{c-emparentados_conocimientos}
+\input{c-ceb}
+%\input{c-oral}
+\input{c-comala}
+\input{c-proporcion_aurea}
+\backmatter
+
+\end{document}
